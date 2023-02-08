@@ -1,0 +1,89 @@
+<app-header [title]="'Registro de Clientes'">
+</app-header>
+
+<div class="container col-md-8 pb-5 mt-5">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <div class="col-md-8" [formGroup]="mainForm">
+                <h1>Sign up</h1>
+
+                <div class="row">
+                    <mat-form-field class="col-xl-6 col-md-12 col-sm-12">
+                        <mat-label>Name</mat-label>
+                        <input matInput type="text" formControlName="name">
+                        <mat-error>
+                            {{getError('name')}}
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-xl-6 col-md-12">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput type="lastname" formControlName="lastname">
+                        <mat-error>
+                            {{getError('lastname')}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <mat-form-field class="col-xl-6 col-md-12 col-sm-12">
+                        <mat-label>Cedula</mat-label>
+                        <input matInput type="cedula" formControlName="cedula">
+                        <mat-error>
+                            {{getError('cedula')}}
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-xl-6 col-md-12">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" formControlName="email">
+                        <mat-error>
+                            {{getError('email')}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <mat-form-field appearance="fill" class="col-xl-6 col-md-12 col-sm-12">
+                        <mat-label>Birth date</mat-label>
+
+                        <input matInput [matDatepicker]="datepicker" formControlName="birthdate">
+
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+
+                        <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+
+                        <mat-datepicker #datepicker></mat-datepicker>
+
+                        <mat-error>
+                            {{getError('birthdate')}}
+                        </mat-error>
+                    </mat-form-field>
+
+                    <div class="col-xl-6 col-md-12">
+                        <mat-label>Active</mat-label>
+                        <mat-button-toggle 
+                            [aria-label]="mainForm.get('active')?.value ? 'Disable' : 'Enable'"
+                            formControlName="active">
+                            <mat-icon>notifications</mat-icon>
+
+                          </mat-button-toggle>
+                        <mat-error>
+                            {{getError('active')}}
+                        </mat-error>
+                    </div> 
+                </div>
+
+                <hr>
+
+                <div class="justify-content-between m-3">
+                    <button mat-stroked-button color="secondary" [routerLink]="['']" routerLinkActive="router-link-active">Back to Home</button>
+                    <button mat-raised-button color="primary" type="submit" (click)="register()">Register</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
