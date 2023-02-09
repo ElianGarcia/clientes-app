@@ -1,11 +1,11 @@
 import { Address } from "./address";
 
 export class Cliente {
-    id: number;
+    clienteId: number;
     name: string;
-    lastname: string;
+    lastName: string;
     cedula: string;
-    birthdate: Date;
+    birthDate: Date;
     createAt: string;
     email: string;
     active: boolean;

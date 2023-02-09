@@ -1,0 +1,80 @@
+<div class="container col-md-8 pb-5 mt-5">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <div class="col-md-8" [formGroup]="mainForm">
+                <h1>Personal Information</h1>
+
+                <div class="row">
+                    <mat-form-field class="col-xl-6 col-md-12 col-sm-12">
+                        <mat-label>Name</mat-label>
+                        <input matInput type="text" formControlName="name">
+                        <mat-error>
+                            {{getError('name')}}
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-xl-6 col-md-12">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput type="text" formControlName="lastName">
+                        <mat-error>
+                            {{getError('lastName')}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <mat-form-field class="col-xl-6 col-md-12 col-sm-12">
+                        <mat-label>Cedula</mat-label>
+                        <input matInput type="text" formControlName="cedula">
+                        <mat-error>
+                            {{getError('cedula')}}
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-xl-6 col-md-12">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" formControlName="email">
+                        <mat-error>
+                            {{getError('email')}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <mat-form-field appearance="fill" class="col-xl-6 col-md-12 col-sm-12">
+                        <mat-label>Birth date</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="birthDate">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+
+                        <mat-error>
+                            {{getError('birthDate')}}
+                        </mat-error>
+                    </mat-form-field>
+
+                    <div class="col-xl-6 col-md-12">
+                        <mat-checkbox 
+                            formControlName="active"
+                            color="primary">
+                            Active
+                        </mat-checkbox>
+
+                        <mat-error>
+                            {{getError('active')}}
+                        </mat-error>
+                    </div> 
+                </div>
+
+                <hr>
+
+                <div class="d-flex justify-content-around m-3">
+                    <button mat-button color="secondary" [routerLink]="['']" routerLinkActive="router-link-active">Back to Home</button>
+                    <button mat-stroked-button color="primary" type="submit" (click)="register(false)">Save</button>
+                    <button mat-raised-button color="primary" type="submit" (click)="register(true)">Save / Next</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

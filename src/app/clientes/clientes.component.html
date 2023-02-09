@@ -1,26 +1,53 @@
-<app-header
-    [title]="'Clientes App'">
+<app-header [title]="'Clientes App'">
 </app-header>
 
 <main>
-    <mat-grid-list cols="2" rowHeight="2:1">
-        <mat-grid-tile>
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>Clientes</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <p>Content 1</p>
-                </mat-card-content>
-            </mat-card>
-        </mat-grid-tile>
-        <mat-grid-tile>2</mat-grid-tile>
-        <mat-grid-tile>3</mat-grid-tile>
-        <mat-grid-tile>4</mat-grid-tile>
-    </mat-grid-list>
-
+    <div class="upper-bar">
+        <mat-card class="activos">
+            <mat-card-header>
+                <mat-card-title>Clientes</mat-card-title>
+                <mat-card-subtitle>Activos</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <h2>{{dashboard.totalClientesActivos}}</h2>
+            </mat-card-content>
+        </mat-card>
+        
+        <mat-card class="inactivos">
+            <mat-card-header>
+                <mat-card-title>Clientes </mat-card-title>
+                <mat-card-subtitle>Inactivos</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <h2>{{dashboard.totalClientesInactivos}}</h2>
+            </mat-card-content>
+        </mat-card>
+        
+        <mat-card class="more-addresses">
+            <mat-card-header>
+                <mat-card-title>Clientes </mat-card-title>
+                <mat-card-subtitle>con mas de una direccion</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <h2>{{dashboard.totalClientesMasDirecciones}}</h2>
+            </mat-card-content>
+        </mat-card>
+        
+        <mat-card class="addresses">
+            <mat-card-header>
+                <mat-card-title>Direcciones </mat-card-title>
+                <mat-card-subtitle>activas</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <h2>{{dashboard.totalDirecciones}}</h2>
+            </mat-card-content>
+        </mat-card>
+        
+        <button mat-raised-button color="primary" [routerLink]="['./registro']" routerLinkActive="router-link-active" >
+            <mat-icon>add</mat-icon>
+            <span>Agregar Cliente</span>
+        </button>
+        
+    </div>
+    <app-list></app-list>
 </main>
-
-<app-footer>
-    
-</app-footer>

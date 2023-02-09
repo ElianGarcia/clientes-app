@@ -17,11 +17,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatInputModule } from '@angular/material/input';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
+
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    DialogComponent
   ],
   imports: [
     CommonModule,
@@ -39,11 +45,15 @@ import { MatInputModule } from '@angular/material/input';
     MatDatepickerModule,
     HttpClientModule,
     MatButtonToggleModule,
-    MatInputModule
+    MatInputModule,
+    MatStepperModule,
+    MatCheckboxModule,
+    MatDialogModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
+    DialogComponent,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
@@ -57,7 +67,9 @@ import { MatInputModule } from '@angular/material/input';
     MatDatepickerModule,
     HttpClientModule,
     MatButtonToggleModule,
-    MatInputModule
+    MatInputModule,
+    MatStepperModule,
+    MatCheckboxModule
   ]
 })
 export class SharedModule { }

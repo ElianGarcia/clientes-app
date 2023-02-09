@@ -1,0 +1,34 @@
+<app-header [title]="'Lista de Direcciones'"></app-header>
+
+<button mat-raised-button color="primary"  >
+       
+    </button>
+
+<div class="upper-bar row">
+
+    <h3 class="text-center">
+        Here you can see the addresses of the selected customer. But you can always get 
+        <span class="fw-bold" [routerLink]="['']" routerLinkActive="router-link-active">back to home</span>
+    </h3>
+
+    <ng-container *ngFor="let item of list">
+        <mat-card class="activos">
+            <mat-card-header>
+                <mat-card-title>{{item.alias}} </mat-card-title>
+                <mat-card-subtitle>Street: <span>{{item.street}}</span></mat-card-subtitle>
+                <mat-card-subtitle>City: <span>{{item.city}}</span></mat-card-subtitle>
+                <mat-card-subtitle>Zip Code: <span>{{item.zipCode}}</span></mat-card-subtitle>
+                <mat-card-subtitle>State: <span>{{item.state}}</span></mat-card-subtitle>
+                <mat-card-subtitle>Country: <span>{{item.country}}</span></mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+    </ng-container>
+
+    <ng-container *ngIf="list.length < 1">
+        <h3 class="text-center">No records found.</h3>
+
+        <button mat-raised-button color="primary" [routerLink]="['']" routerLinkActive="router-link-active" >
+            <span>Back to home</span>
+        </button>
+    </ng-container>
+</div>

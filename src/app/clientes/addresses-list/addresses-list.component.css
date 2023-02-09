@@ -1,0 +1,28 @@
+.upper-bar {
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-evenly;
+    justify-self: center;
+}
+
+.mat-card {
+  padding: 10px;
+  background-color: rgb(231, 210, 87);
+  margin-right: 5px;
+  margin-top: 10px;
+  width: 240px;
+  height: auto !important;
+}
+
+span {
+  font-style: italic;
+  
+}
+
+button {
+  width: 120px;
+}
